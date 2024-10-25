@@ -1,0 +1,6 @@
+streamlit
+langchain-groq
+langchain-community
+groq
+beautifulsoup4
+faiss-cpu
