@@ -1,95 +1,87 @@
-# End-to-End Advanced RAG Project using Open Source LLM Models such as Mixtral with Groq Inferencing Engine
+# End-to-End Advanced RAG Project using Open Source LLM Models such as Mistral with Groq Inferencing Engine
 
-## This project leverages Retrieval-Augmented Generation (RAG) techniques with advanced, open-source Large Language Models (LLMs), specifically Mixtral, for efficient inferencing using the Groq hardware platform. The goal is to build a complete RAG system that can generate high-quality, contextually relevant responses by retrieving information from a knowledge base and enhancing it with language model generation.
+This project leverages Retrieval-Augmented Generation (RAG) with advanced, open-source Large Language Models (LLMs), specifically Mistral, for efficient inferencing on the Groq hardware platform. The RAG system combines the power of contextually relevant information retrieval with language model generation to create accurate, detailed responses.
 
 ## Project Objectives
 
-- **Develop a RAG pipeline** to improve contextual response generation through information retrieval.
-- **Implement Mixtral** with Groq’s inferencing engine to maximize efficiency and response times.
-- **Use WebBasedLoader for data extraction**, with data sourced from various web-based knowledge repositories, including the LangSmith website.
-- **Establish a streamlined, end-to-end RAG solution** for seamless data ingestion, pre-processing, retrieval, and inferencing.
+- **Develop a robust RAG pipeline** that can retrieve and generate contextually rich responses.
+- **Implement Mistral** with Groq to ensure efficient, scalable inferencing for low latency.
+- **Leverage Ollama embeddings** for optimized text representation and retrieval performance.
+- **Create a user-friendly interface** using Streamlit to allow seamless interaction with the RAG pipeline.
 
 ## Key Features
 
 1. **Retrieval-Augmented Generation (RAG) Pipeline**  
-   - Integrates retrieval mechanisms with a generative model for response generation.
-   - Utilizes WebBasedLoader to extract and structure information from web-based sources, specifically LangSmith.
+   - Combines information retrieval with Mistral for enhanced response accuracy.
+   - Uses a knowledge base to retrieve relevant content before generating responses.
 
-2. **Data Extraction Using WebBasedLoader**  
-   - Extracts knowledge from online sources, allowing quick access to recent data.
-   - LangSmith website data used as a base for relevant information retrieval, ensuring high-quality and reliable responses.
+2. **Groq Inferencing Engine Optimization**  
+   - Optimized for handling LLM workloads with low latency and high throughput.
+   - Integrated with Mistral to balance efficiency and response quality.
 
-3. **Groq Inferencing Engine Optimization**  
-   - Uses the Groq inferencing engine to handle computationally intensive tasks, minimizing latency and improving throughput for large-scale data.
+3. **Advanced Embedding and Document Retrieval**  
+   - **Ollama Embeddings** for generating high-quality, dense vectors for document retrieval.
+   - **WebBasedLoader for Data Extraction**: Extracted information from the LangSmith website using WebBasedLoader, enhancing the knowledge base with domain-specific content.
   
-4. **Open-Source LLM Integration with Mixtral**  
-   - Mistral’s architecture enables high-performance inferencing without excessive computational demand.
-   - Configured for seamless integration within the RAG pipeline to enhance language understanding and generation.
-
-5. **Scalability and Adaptability**  
-   - Fully open-source, allowing customization for various deployment settings and hardware.
-   - Compatible with Groq, making it ideal for performance-intensive environments.
+4. **Interactive Web Application with Streamlit**  
+   - Provides a Streamlit-based front end for user interactions.
+   - Allows users to enter queries, view retrieved context, and see generated responses seamlessly.
 
 ## Architecture Overview
 
-1. **Data Ingestion and Pre-Processing**  
-   - WebBasedLoader extracts and preprocesses data from the LangSmith website, converting it into structured formats.
-   - Implements text cleaning, tokenization, and embedding for effective data storage and retrieval.
+1. **Data Extraction and Pre-Processing**  
+   - Extracted domain-specific content from the LangSmith website using WebBasedLoader.
+   - Applied pre-processing steps such as text cleaning, tokenization, and embedding generation.
 
-2. **Document Embedding and Vector Store**  
-   - Embeddings are generated for knowledge base documents and stored in a vector database for efficient retrieval.
-   - Vector similarity searches enable quick, contextually relevant document access.
+2. **Embedding and Vector Storage**  
+   - Utilized Ollama embeddings to generate dense representations of the knowledge base.
+   - Stored these embeddings in a vector database, enhancing retrieval speed and accuracy.
 
-3. **Contextual Retrieval Module**  
-   - Queries the vector database for relevant documents based on input prompts
-   - Provides the top-N documents to enhance the context for LLM generation.
+3. **Contextual Retrieval and RAG Pipeline**  
+   - Retrieves relevant documents based on input queries.
+   - Uses retrieved documents as context for Mistral’s generation process.
 
-4. **LLM Generation with Mixtral**  
-   - Processes retrieved context along with input query, leveraging Mixtral for generating accurate and relevant responses.
-  
-5. **Inferencing via Groq Engine**  
-   - Runs the inferencing pipeline on Groq hardware, maximizing response time and reducing computational costs.
+4. **LLM Inferencing with Groq**  
+   - Leverages Groq’s optimized hardware for low-latency and high-performance model inferencing.
+   - Processes contextual input from the RAG pipeline to generate accurate responses.
+
+5. **Streamlit Web Application**  
+   - Provides a user interface for querying and viewing responses.
+   - Displays retrieved context along with Mistral’s generated output.
 
 ## Setup and Installation
 
-### Prerequisites
-
-- Python 3.8+
-- Groq SDK for hardware support
-- Ollama for Embeddings
-  
 ### Installation
 
 1. Clone the repository:
-   ```bash-
-   git clone https://github.com/hmairaj94/RAG-Groq-Mixtral.git
-   cd groq
+   ```bash
+   git clone https://github.com/hmairaj94/RAG-Groq-Mistral.git
+   cd RAG-Groq-Mistral
    ```
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-3. Configure the Groq engine and vector database.
 
 ### Running the Project
 
-Start the RAG pipeline:
+To start the RAG pipeline and launch the Streamlit application:
    ```bash
-   python app.py
+   streamlit run app.py
    ```
 
 ## Evaluation and Metrics
 
-1. **Inference Speed and Throughput**: Benchmarked on Groq vs. CPU/GPU configurations.
-2. **Response Accuracy**: Measured using BLEU and ROUGE scores on generated responses.
-3. **Latency and Scalability**: Ensures system meets real-time constraints with load testing.
+1. **Inference Speed**: Compare Groq vs. other hardware for model efficiency.
+2. **Accuracy and Relevance**: Evaluate response relevance using metrics like BLEU, ROUGE.
+3. **User Latency**: Measure query response time for real-time applications.
 
-## Use Cases
+## Potential Use Cases
 
-- **Customer Support**: For real-time, context-driven response generation.
-- **Knowledge Management**: Centralizes and retrieves information from large web-based sources, like LangSmith.
-- **Content Generation**: Ideal for generating summaries or answers based on retrieved context.
+- **Customer Support**: Real-time, accurate responses with contextual relevance.
+- **Knowledge Management**: Fast retrieval and generation from extensive knowledge bases.
+- **Content Creation**: Assists in creating summaries or generating answers from documents.
 
 ## Contributing
 
-Contributions are welcome! Please create an issue or pull request with any proposed changes.
+Contributions are welcome! Please create an issue or a pull request for proposed changes.
