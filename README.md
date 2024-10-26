@@ -87,7 +87,7 @@ To start the RAG pipeline and launch the Streamlit application:
 Contributions are welcome! Please create an issue or a pull request for proposed changes.
 
 
-##Screenshot
+## Screenshot
 
 ![Screenshot (64)](https://github.com/user-attachments/assets/7ae570e9-1ce3-4e91-84f6-b3c6e077a1ae)
 
